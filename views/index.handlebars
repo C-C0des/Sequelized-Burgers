@@ -1,0 +1,67 @@
+<div class="container">
+  
+  <div class="text-center">
+    <img id="burger-img" src="/assets/images/burger.png">
+    <img id="burger-img" src="/assets/images/city.png">
+    <h1>Sequelized City Burger</h1>
+
+      <form class="create-update-form" action="/" method="POST">
+        <div class="form-group">
+          <input type="text" id="ca" name="burger_name">
+          <input type="submit" id="add-burger" value="Place Order">
+        </div>
+      </form>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-lg-6">
+      <h2>Burgers</h2>
+
+      <ul class="list-group">
+          {{#each burgers}}
+          {{#unless this.devoured}}
+          <li class="list-group-item">
+            <h2>{{this.burger_name}}</h2>
+
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="true">
+              <input type="submit" id="devour-burger" value="Devour it!">
+            </form>
+          </li>
+          {{/unless}}
+          {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-lg-6">
+      <h2>Devoured</h2>
+
+      <ul class="list-group">
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <li class="list-group-item">
+             <h2>{{this.burger_name}}</h2>
+
+             <form action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="false">
+                <input type="submit" id="order-burger" value="Order again">
+             </form>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
