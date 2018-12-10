@@ -37,7 +37,7 @@ module.exports = function(app) {
     console.log(req.params.id);
 
     db.Burger.update({
-      devoured: req.body.devoured
+      devoured:true
     }, {
       where: {
         id: req.params.id
@@ -49,6 +49,21 @@ module.exports = function(app) {
       res.json(err);
     });
   });
+
+    // DELETE route 
+    app.delete("/:id", function(req, res) {
+      db.Burger.destroy ({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbBurger){
+        res.redirect("/");
+      })
+       .catch(function(err) {
+        res.json(err);
+      });
+    });
+  
 };
 
 

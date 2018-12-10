@@ -1,5 +1,13 @@
 body {
 background-color: rgb(199, 235, 247);
+margin: 0;
+padding: 0;
+text-align: center;
+}
+
+.formstyle{
+    width:50px;
+    height:60px;
 }
 
 #burger-img {
@@ -28,7 +36,6 @@ input[type="text"] {
   padding-bottom: 5px;
   border-radius: 2px;
   border: none;
-  text-transform: uppercase;
   background-color: #FC4A59;
   color: #fff;
   font-weight: 700;
@@ -48,11 +55,20 @@ h2 {
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 2px;
-  text-transform: uppercase;
   background-color: #FC4A59;
   color: #fff;
   font-weight: 700;
   font-size: 13px;
+}
+
+#deleted-burger{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #FC4A59;
+  color: #fff;
+  float:right;
 }
 
 #order-burger {
@@ -61,11 +77,21 @@ h2 {
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 2px;
-  text-transform: uppercase;
   background-color:#FFD700;
   color: #fff;
   font-weight: 700;
   font-size: 13px;
 }
+
+#deleted-burger{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #FC4A59;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+  }
 
 
